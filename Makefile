@@ -8,7 +8,7 @@ SRCS := $(shell find $(SRC_DIR) -name '*.java')
 SRCS_CLASS := $(shell find $(SRC_DIR) -name '*.class')
 TARGET_DIR := ./target
 
-all: info clean build
+all: info clean build test
 
 clean:
 	@echo "\n\033[92m[INFO] Cleaning targets...\033[0m"
@@ -16,6 +16,9 @@ clean:
 build: clean
 	@echo "\n\033[92m[INFO] Compiling sources...\033[0m"
 	mvn compile
+test:
+	@echo "\n\033[92m[INFO] Testing artifacts...\033[0m"
+	mvn test
 exec: build
 	@echo "\n\033[92m[INFO] Executing application\033[0m"
 	mvn exec:java
