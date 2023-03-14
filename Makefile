@@ -5,6 +5,7 @@ nullstr =
 # Used for javac
 SRC_DIR := ./src
 SRCS := $(shell find $(SRC_DIR) -name '*.java')
+SRCS_CLASS := $(shell find $(SRC_DIR) -name '*.class')
 TARGET_DIR := ./target
 
 all: info clean build
@@ -24,10 +25,12 @@ info:
 	@echo "User: " $(USER)
 	@echo "--------------------------------------\n"
 
-javac:
+javac: javaclean
 	javac $(SRCS) -d $(TARGET_DIR)
-java:
+java:	javac
 	cd $(TARGET_DIR) && java main.java.hello.HelloWorld
+javaclean:
+	rm -rf $(TARGET_DIR) $(SRCS_CLASS)
 test:
 ifeq ($(strip $(DEBUG)), true)
 	echo "DEBUG mode"
