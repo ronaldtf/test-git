@@ -28,10 +28,10 @@
               </executions>
               <configuration>
                 <mainClass>main.java.hello.HelloWorld</mainClass>
-                <arguments>
-                  <argument>foo</argument>
-                  <argument>bar</argument>
-                </arguments>
+<!--                <arguments>
+                      <argument>foo</argument>
+                    </arguments>
+-->
               </configuration>
             </plugin>
         </plugins>
