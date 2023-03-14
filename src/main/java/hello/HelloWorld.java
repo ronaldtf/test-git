@@ -4,11 +4,14 @@ import java.time.LocalTime;
 
 public class HelloWorld {
     public static void main(String[] args) {
-      LocalTime currentTime = LocalTime.now();
-		  System.out.println("The current local time is: " + currentTime);
+    	System.out.println("The current local time is: " + new HelloWorld().getCurrentTime());
 
         Greeter greeter = new Greeter();
         System.out.println(greeter.sayHello());
-	greeter.printVersion();
+	    System.out.println(greeter.getVersion());
+    }
+
+    public  LocalTime getCurrentTime() {
+        return LocalTime.now();
     }
 }

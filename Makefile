@@ -1,6 +1,6 @@
 dev := "Ronald Teijeira Fernandez"
 DEBUG ?= true # set it if not set before
-nullstr = 
+nullstr =
 
 # Used for javac
 SRC_DIR := ./src
@@ -31,7 +31,7 @@ java:	javac
 	cd $(TARGET_DIR) && java main.java.hello.HelloWorld
 javaclean:
 	rm -rf $(TARGET_DIR) $(SRCS_CLASS)
-test:
+debug:
 ifeq ($(strip $(DEBUG)), true)
 	echo "DEBUG mode"
 else
